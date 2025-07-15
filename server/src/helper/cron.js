@@ -14,9 +14,9 @@ function chunkArray(array, size) {
 }
 
 export const startFetchJobsCron = () => {
+   console.log('Job cron scheduled to run every hour at minute 0 (Asia/Kolkata)');
   cron.schedule('0 * * * *', async () => {
     console.log(`Cron job trigger  at: ${moment().tz('Asia/Kolkata').format('YYYY-MM-DD HH:mm:ss z')}`)
-
     const feedUrls = [
       'https://jobicy.com/?feed=job_feed',
       'https://jobicy.com/?feed=job_feed&job_categories=smm&job_types=full-time',
@@ -61,5 +61,7 @@ export const startFetchJobsCron = () => {
         console.error(`Error fetching feed ${url}: ${error.message}`);
       }
     }
+  }, {
+    timezone: 'Asia/Kolkata'
   });
 };
