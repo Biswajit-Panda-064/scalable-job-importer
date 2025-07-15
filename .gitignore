@@ -1,0 +1,15 @@
+# Client
+client/.next/
+client/node_modules/
+client/out/
+
+# Server
+server/node_modules/
+server/dist/
+server/logs/
+
+# General
+/client/.env   
+/server/.env          
+*.log
+.vscode/
