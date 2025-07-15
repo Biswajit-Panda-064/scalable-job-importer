@@ -77,7 +77,7 @@ function chunkArray(array, size) {
 }
 
 export const startFetchJobsCron = () => {
-  cron.schedule('*/1 * * * *', async () => {
+  cron.schedule('*/5 * * * *', async () => {
     console.log('Cron job started to fetch job feeds');
 
     const feedUrls = [
