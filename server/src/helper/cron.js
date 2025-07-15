@@ -2,9 +2,9 @@ import cron from 'node-cron';
 import axios from 'axios';
 import { parseStringPromise } from 'xml2js';
 import { jobQueue } from './queue.js';
-
+import moment from 'moment-timezone';
 const BATCH_SIZE = parseInt(process.env.BATCH_SIZE) || 30;
-
+console.log(`Cron job file call at: ${moment().tz('Asia/Kolkata').format('YYYY-MM-DD HH:mm:ss z')}`);
 function chunkArray(array, size) {
   const result = [];
   for (let i = 0; i < array.length; i += size) {
@@ -15,7 +15,7 @@ function chunkArray(array, size) {
 
 export const startFetchJobsCron = () => {
   cron.schedule('0 * * * *', async () => {
-    console.log('Cron job started to fetch job feeds');
+    console.log(`Cron job trigger  at: ${moment().tz('Asia/Kolkata').format('YYYY-MM-DD HH:mm:ss z')}`)
 
     const feedUrls = [
       'https://jobicy.com/?feed=job_feed',
