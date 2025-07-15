@@ -21,7 +21,7 @@ This project is a scalable job importer system that fetches XML data from multip
 
 ## 1. Clone the repo
 
-git clone https://github.com/yourusername/scalable-job-importer.git
+git clone https://github.com/Biswajit-Panda-064/scalable-job-importer.git
 cd scalable-job-importer
 
 ## 2. Backend Setup
